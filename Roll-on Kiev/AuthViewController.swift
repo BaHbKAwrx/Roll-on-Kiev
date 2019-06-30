@@ -24,8 +24,6 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
         
         databaseRef = Database.database().reference(withPath: "users")
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,41 +37,76 @@ class AuthViewController: UIViewController {
 //        }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        emailTextField.becomeFirstResponder()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         guard let handler = stateChangeHandler else { return }
         Auth.auth().removeStateDidChangeListener(handler)
     }
     
+    // MARK: - Private methods
+    
+    private func showAlertWithMessage(_ text: String) {
+        let alert = UIAlertController(title: "Ошибка входа!", message: text, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ок", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - Button actions
     
     @IBAction func loginTapped(_ sender: UIButton) {
-        guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else { return }
+        guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else {
+            showAlertWithMessage("Заполните данные")
+            return
+        }
         
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
             guard let self = self else { return }
             
-            if user != nil {
+            if let error = error {
+                self.showAlertWithMessage(error.localizedDescription)
+                return
+            }
+            
+            if let _ = user {
                 self.performSegue(withIdentifier: self.segueIdentifier, sender: nil)
             }
         }
     }
     
     @IBAction func registerTapped(_ sender: UIButton) {
-        guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else { return }
+        guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else {
+            showAlertWithMessage("Заполните данные")
+            return
+        }
         
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] (user, error) in
             guard let self = self else { return }
             
-            guard let user = user, error == nil else { return }
+            if let error = error {
+                self.showAlertWithMessage(error.localizedDescription)
+                return
+            }
+            
+            guard let user = user else { return }
             let userRef = self.databaseRef?.child(user.user.uid)
             userRef?.setValue(["email": user.user.email])
         }
     }
     
     @IBAction func stayAnonymTapped(_ sender: UIButton) {
-        Auth.auth().signInAnonymously { [weak self] (user, error) in
-            guard let self = self, error == nil else { return }
+        Auth.auth().signInAnonymously { [weak self] (_, error) in
+            guard let self = self else { return }
+            
+            if let error = error {
+                self.showAlertWithMessage(error.localizedDescription)
+                return
+            }
             
             self.performSegue(withIdentifier: self.segueIdentifier, sender: nil)
         }
