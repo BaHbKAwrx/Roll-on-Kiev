@@ -11,6 +11,7 @@ import Firebase
 
 class AuthViewController: UIViewController {
     
+    @IBOutlet var buttonsArray: [UIButton]!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var authView: UIView!
@@ -19,11 +20,17 @@ class AuthViewController: UIViewController {
     var stateChangeHandler: AuthStateDidChangeListenerHandle?
     var databaseRef: DatabaseReference?
     let segueIdentifier = "menuSegue"
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     // MARK: - VC Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setButtonsLook()
         
         databaseRef = Database.database().reference(withPath: "users")
     }
@@ -51,6 +58,14 @@ class AuthViewController: UIViewController {
     }
     
     // MARK: - Private methods
+    
+    private func setButtonsLook() {
+        for button in buttonsArray {
+            button.layer.borderWidth = 2
+            button.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            button.layer.cornerRadius = 8
+        }
+    }
     
     private func showAlertWithMessage(_ text: String) {
         let alert = UIAlertController(title: "Ошибка входа!", message: text, preferredStyle: .alert)
