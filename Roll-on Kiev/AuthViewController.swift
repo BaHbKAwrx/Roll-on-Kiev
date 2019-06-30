@@ -13,6 +13,8 @@ class AuthViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var authView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var stateChangeHandler: AuthStateDidChangeListenerHandle?
     var databaseRef: DatabaseReference?
@@ -57,6 +59,16 @@ class AuthViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    private func toggleActivityIndicator(on: Bool) {
+        authView.isHidden = on
+        
+        if on {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+    }
+    
     // MARK: - Button actions
     
     @IBAction func loginTapped(_ sender: UIButton) {
@@ -65,8 +77,12 @@ class AuthViewController: UIViewController {
             return
         }
         
+        toggleActivityIndicator(on: true)
+        
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
             guard let self = self else { return }
+            
+            self.toggleActivityIndicator(on: false)
             
             if let error = error {
                 self.showAlertWithMessage(error.localizedDescription)
@@ -85,8 +101,12 @@ class AuthViewController: UIViewController {
             return
         }
         
+        toggleActivityIndicator(on: true)
+        
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] (user, error) in
             guard let self = self else { return }
+            
+            self.toggleActivityIndicator(on: false)
             
             if let error = error {
                 self.showAlertWithMessage(error.localizedDescription)
@@ -100,8 +120,12 @@ class AuthViewController: UIViewController {
     }
     
     @IBAction func stayAnonymTapped(_ sender: UIButton) {
+        toggleActivityIndicator(on: true)
+        
         Auth.auth().signInAnonymously { [weak self] (_, error) in
             guard let self = self else { return }
+            
+            self.toggleActivityIndicator(on: false)
             
             if let error = error {
                 self.showAlertWithMessage(error.localizedDescription)
