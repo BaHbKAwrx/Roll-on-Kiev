@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C06221ECFFDBBA5CCBF01EA /* Pods_Roll_on_Kiev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0738C06C48CB8977E039F1EA /* Pods_Roll_on_Kiev.framework */; };
 		62305D7022C8E59500A48983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62305D6F22C8E59500A48983 /* AppDelegate.swift */; };
 		62305D7222C8E59500A48983 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62305D7122C8E59500A48983 /* ViewController.swift */; };
 		62305D7522C8E59500A48983 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62305D7322C8E59500A48983 /* Main.storyboard */; };
 		62305D7722C8E59700A48983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62305D7622C8E59700A48983 /* Assets.xcassets */; };
 		62305D7A22C8E59700A48983 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62305D7822C8E59700A48983 /* LaunchScreen.storyboard */; };
+		62305D8222C8EC9500A48983 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62305D8122C8EC9500A48983 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0738C06C48CB8977E039F1EA /* Pods_Roll_on_Kiev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Roll_on_Kiev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62305D6C22C8E59500A48983 /* Roll-on Kiev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roll-on Kiev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62305D6F22C8E59500A48983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62305D7122C8E59500A48983 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		62305D7622C8E59700A48983 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62305D7922C8E59700A48983 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62305D7B22C8E59700A48983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62305D8122C8EC9500A48983 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		986180B3B521326EC95A2053 /* Pods-Roll-on Kiev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roll-on Kiev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Roll-on Kiev/Pods-Roll-on Kiev.debug.xcconfig"; sourceTree = "<group>"; };
+		F288142038059C67FA63E1C0 /* Pods-Roll-on Kiev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roll-on Kiev.release.xcconfig"; path = "Pods/Target Support Files/Pods-Roll-on Kiev/Pods-Roll-on Kiev.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C06221ECFFDBBA5CCBF01EA /* Pods_Roll_on_Kiev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BCC1F3D4479BD897C7555EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0738C06C48CB8977E039F1EA /* Pods_Roll_on_Kiev.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		62305D6322C8E59400A48983 = {
 			isa = PBXGroup;
 			children = (
 				62305D6E22C8E59500A48983 /* Roll-on Kiev */,
 				62305D6D22C8E59500A48983 /* Products */,
+				9E6C6030F7AAF02335504D19 /* Pods */,
+				1BCC1F3D4479BD897C7555EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +77,18 @@
 				62305D7622C8E59700A48983 /* Assets.xcassets */,
 				62305D7822C8E59700A48983 /* LaunchScreen.storyboard */,
 				62305D7B22C8E59700A48983 /* Info.plist */,
+				62305D8122C8EC9500A48983 /* GoogleService-Info.plist */,
 			);
 			path = "Roll-on Kiev";
+			sourceTree = "<group>";
+		};
+		9E6C6030F7AAF02335504D19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				986180B3B521326EC95A2053 /* Pods-Roll-on Kiev.debug.xcconfig */,
+				F288142038059C67FA63E1C0 /* Pods-Roll-on Kiev.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62305D7E22C8E59700A48983 /* Build configuration list for PBXNativeTarget "Roll-on Kiev" */;
 			buildPhases = (
+				0D687C865A97E82C4D0A7FB3 /* [CP] Check Pods Manifest.lock */,
 				62305D6822C8E59500A48983 /* Sources */,
 				62305D6922C8E59500A48983 /* Frameworks */,
 				62305D6A22C8E59500A48983 /* Resources */,
+				16A01C7D9528E07A49C4164B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,10 +154,64 @@
 				62305D7A22C8E59700A48983 /* LaunchScreen.storyboard in Resources */,
 				62305D7722C8E59700A48983 /* Assets.xcassets in Resources */,
 				62305D7522C8E59500A48983 /* Main.storyboard in Resources */,
+				62305D8222C8EC9500A48983 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D687C865A97E82C4D0A7FB3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Roll-on Kiev-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16A01C7D9528E07A49C4164B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Roll-on Kiev/Pods-Roll-on Kiev-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Roll-on Kiev/Pods-Roll-on Kiev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		62305D6822C8E59500A48983 /* Sources */ = {
@@ -280,6 +363,7 @@
 		};
 		62305D7F22C8E59700A48983 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 986180B3B521326EC95A2053 /* Pods-Roll-on Kiev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +382,7 @@
 		};
 		62305D8022C8E59700A48983 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F288142038059C67FA63E1C0 /* Pods-Roll-on Kiev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
