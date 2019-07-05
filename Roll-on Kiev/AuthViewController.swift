@@ -17,6 +17,17 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var authView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    lazy var wheelImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "wheel")
+        imageView.frame.size.height = 100
+        imageView.frame.size.width = 100
+        imageView.contentMode = .scaleAspectFit
+        imageView.center.x = view.bounds.midX
+        imageView.center.y = view.bounds.midY
+        return imageView
+    }()
+    
     var stateChangeHandler: AuthStateDidChangeListenerHandle?
     var databaseRef: DatabaseReference?
     let segueIdentifier = "menuSegue"
@@ -29,6 +40,10 @@ class AuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        authView.alpha = 0
+        
+        view.addSubview(wheelImageView)
         
         setButtonsLook()
         
@@ -48,7 +63,7 @@ class AuthViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        emailTextField.becomeFirstResponder()
+        startWheelAnimation()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -58,6 +73,28 @@ class AuthViewController: UIViewController {
     }
     
     // MARK: - Private methods
+    
+    private func startWheelAnimation() {
+        
+        var wheelAnimations = [CABasicAnimation]()
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotateAnimation.fromValue = 0.0
+        rotateAnimation.toValue = -3 * Double.pi
+        rotateAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+        wheelAnimations.append(rotateAnimation)
+        
+        let fadeAnimation = CABasicAnimation(keyPath: "opacity")
+        fadeAnimation.fromValue = 1
+        fadeAnimation.toValue = 0
+        wheelAnimations.append(fadeAnimation)
+        
+        let wheelAnimationGroup = CAAnimationGroup()
+        wheelAnimationGroup.delegate = self
+        wheelAnimationGroup.duration = 1.2
+        wheelAnimationGroup.animations = wheelAnimations
+        wheelImageView.layer.add(wheelAnimationGroup, forKey: nil)
+        
+    }
     
     private func setButtonsLook() {
         for button in buttonsArray {
@@ -151,4 +188,16 @@ class AuthViewController: UIViewController {
         }
     }
     
+}
+
+// MARK: - Animation Delegate Methods
+extension AuthViewController: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        wheelImageView.removeFromSuperview()
+        UIView.animate(withDuration: 0.5, animations: {
+            self.authView.alpha = 1
+        }) { (_) in
+            self.emailTextField.becomeFirstResponder()
+        }
+    }
 }
