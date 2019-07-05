@@ -112,6 +112,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="FNg-ep-hqb" id="5kO-oz-B3B"/>
                         <outlet property="authView" destination="BiX-cv-WMw" id="WOv-GY-iRs"/>
+                        <outlet property="authViewBottomConstraint" destination="cGf-MH-lIF" id="31w-hS-hYV"/>
                         <outlet property="emailTextField" destination="fgk-TQ-irI" id="ua4-jX-CVF"/>
                         <outlet property="passwordTextField" destination="DQ7-Tj-P5a" id="9i0-FM-vSu"/>
                         <outletCollection property="buttonsArray" destination="Llp-Q9-XDZ" collectionClass="NSMutableArray" id="jGW-py-R80"/>

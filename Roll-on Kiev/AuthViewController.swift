@@ -16,6 +16,7 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var authView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var authViewBottomConstraint: NSLayoutConstraint!
     
     lazy var wheelImageView: UIImageView = {
         let imageView = UIImageView()
@@ -45,6 +46,11 @@ class AuthViewController: UIViewController {
         
         view.addSubview(wheelImageView)
         
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        registerForKeyboardNotifications()
+        
         setButtonsLook()
         
         databaseRef = Database.database().reference(withPath: "users")
@@ -72,7 +78,37 @@ class AuthViewController: UIViewController {
         Auth.auth().removeStateDidChangeListener(handler)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    // MARK: - Keyboard Notification selectors
+    @objc private func kbDidShow(notification: Notification) {
+        guard let userInfo = notification.userInfo else { return }
+        guard let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height else {
+            return
+        }
+        
+        authViewBottomConstraint.constant = keyboardHeight - authView.frame.height / 2
+        UIView.animate(withDuration: 0.6) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc private func kbDidHide() {
+        authViewBottomConstraint.constant = 100
+        UIView.animate(withDuration: 0.6) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
     // MARK: - Private methods
+    
+    private func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
     
     private func startWheelAnimation() {
         
@@ -188,6 +224,19 @@ class AuthViewController: UIViewController {
         }
     }
     
+}
+
+// MARK: - TextField Delegate Methods
+
+extension AuthViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            passwordTextField.resignFirstResponder()
+        }
+        return true
+    }
 }
 
 // MARK: - Animation Delegate Methods
