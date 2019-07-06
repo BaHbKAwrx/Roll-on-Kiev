@@ -9,29 +9,30 @@
 import UIKit
 import Firebase
 
-class AuthViewController: UIViewController {
+final class AuthViewController: UIViewController {
     
-    @IBOutlet var buttonsArray: [UIButton]!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var authView: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var authViewBottomConstraint: NSLayoutConstraint!
+    // MARK: - Properties
+    @IBOutlet private var buttonsArray: [UIButton]!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var authView: UIView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var authViewBottomConstraint: NSLayoutConstraint!
     
-    lazy var wheelImageView: UIImageView = {
+    private lazy var wheelImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "wheel")
-        imageView.frame.size.height = 100
-        imageView.frame.size.width = 100
+        imageView.image = UIImage(named: Constants.spinningImageName)
+        imageView.frame.size.height = Constants.spinningImageHeight
+        imageView.frame.size.width = Constants.spinningImageHeight
         imageView.contentMode = .scaleAspectFit
         imageView.center.x = view.bounds.midX
         imageView.center.y = view.bounds.midY
         return imageView
     }()
     
-    var stateChangeHandler: AuthStateDidChangeListenerHandle?
-    var databaseRef: DatabaseReference?
-    let segueIdentifier = "menuSegue"
+    private var stateChangeHandler: AuthStateDidChangeListenerHandle?
+    private var databaseRef: DatabaseReference?
+    private let segueIdentifier = Constants.toMenuSegueName
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -43,15 +44,13 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
         
         authView.alpha = 0
-        
+        setButtonsLook()
         view.addSubview(wheelImageView)
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
         registerForKeyboardNotifications()
-        
-        setButtonsLook()
         
         databaseRef = Database.database().reference(withPath: "users")
     }
@@ -69,7 +68,7 @@ class AuthViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        startWheelAnimation()
+        wheelImageView.animateSpin(for: self, duration: Constants.spinAnimationDuration, spins: Constants.numberOfSpins)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -91,14 +90,14 @@ class AuthViewController: UIViewController {
         }
         
         authViewBottomConstraint.constant = keyboardHeight - authView.frame.height / 2
-        UIView.animate(withDuration: 0.6) {
+        UIView.animate(withDuration: Constants.textFieldAnimationDuration) {
             self.view.layoutIfNeeded()
         }
     }
     
     @objc private func kbDidHide() {
-        authViewBottomConstraint.constant = 100
-        UIView.animate(withDuration: 0.6) {
+        authViewBottomConstraint.constant = Constants.authViewBottomConstraintConstant
+        UIView.animate(withDuration: Constants.textFieldAnimationDuration) {
             self.view.layoutIfNeeded()
         }
     }
@@ -110,33 +109,11 @@ class AuthViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
     
-    private func startWheelAnimation() {
-        
-        var wheelAnimations = [CABasicAnimation]()
-        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotateAnimation.fromValue = 0.0
-        rotateAnimation.toValue = -3 * Double.pi
-        rotateAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
-        wheelAnimations.append(rotateAnimation)
-        
-        let fadeAnimation = CABasicAnimation(keyPath: "opacity")
-        fadeAnimation.fromValue = 1
-        fadeAnimation.toValue = 0
-        wheelAnimations.append(fadeAnimation)
-        
-        let wheelAnimationGroup = CAAnimationGroup()
-        wheelAnimationGroup.delegate = self
-        wheelAnimationGroup.duration = 1.2
-        wheelAnimationGroup.animations = wheelAnimations
-        wheelImageView.layer.add(wheelAnimationGroup, forKey: nil)
-        
-    }
-    
     private func setButtonsLook() {
         for button in buttonsArray {
-            button.layer.borderWidth = 2
-            button.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            button.layer.cornerRadius = 8
+            button.layer.borderWidth = Constants.buttonBorderWidth
+            button.layer.borderColor = Constants.buttonBorderColor
+            button.layer.cornerRadius = Constants.buttonCornerRadius
         }
     }
     
@@ -149,12 +126,7 @@ class AuthViewController: UIViewController {
     
     private func toggleActivityIndicator(on: Bool) {
         authView.isHidden = on
-        
-        if on {
-            activityIndicator.startAnimating()
-        } else {
-            activityIndicator.stopAnimating()
-        }
+        on ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
     
     // MARK: - Button actions
@@ -227,7 +199,6 @@ class AuthViewController: UIViewController {
 }
 
 // MARK: - TextField Delegate Methods
-
 extension AuthViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {
@@ -243,7 +214,7 @@ extension AuthViewController: UITextFieldDelegate {
 extension AuthViewController: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         wheelImageView.removeFromSuperview()
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: Constants.authViewFadeAnimationDuration, animations: {
             self.authView.alpha = 1
         }) { (_) in
             self.emailTextField.becomeFirstResponder()

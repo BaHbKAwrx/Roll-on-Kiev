@@ -14,6 +14,8 @@
 		62305D7A22C8E59700A48983 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62305D7822C8E59700A48983 /* LaunchScreen.storyboard */; };
 		62305D8222C8EC9500A48983 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62305D8122C8EC9500A48983 /* GoogleService-Info.plist */; };
 		62305D8422C8FBAB00A48983 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62305D8322C8FBAB00A48983 /* AuthViewController.swift */; };
+		62B0F14D22D0D1A5006A7D2A /* UIView + animateSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B0F14C22D0D1A5006A7D2A /* UIView + animateSpin.swift */; };
+		62B0F14F22D0D629006A7D2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B0F14E22D0D629006A7D2A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		62305D7B22C8E59700A48983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62305D8122C8EC9500A48983 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		62305D8322C8FBAB00A48983 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		62B0F14C22D0D1A5006A7D2A /* UIView + animateSpin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + animateSpin.swift"; sourceTree = "<group>"; };
+		62B0F14E22D0D629006A7D2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		986180B3B521326EC95A2053 /* Pods-Roll-on Kiev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roll-on Kiev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Roll-on Kiev/Pods-Roll-on Kiev.debug.xcconfig"; sourceTree = "<group>"; };
 		F288142038059C67FA63E1C0 /* Pods-Roll-on Kiev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roll-on Kiev.release.xcconfig"; path = "Pods/Target Support Files/Pods-Roll-on Kiev/Pods-Roll-on Kiev.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +77,8 @@
 			children = (
 				62305D6F22C8E59500A48983 /* AppDelegate.swift */,
 				62305D8322C8FBAB00A48983 /* AuthViewController.swift */,
+				62B0F14C22D0D1A5006A7D2A /* UIView + animateSpin.swift */,
+				62B0F14E22D0D629006A7D2A /* Constants.swift */,
 				62305D7322C8E59500A48983 /* Main.storyboard */,
 				62305D7622C8E59700A48983 /* Assets.xcassets */,
 				62305D7822C8E59700A48983 /* LaunchScreen.storyboard */,
@@ -219,7 +225,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				62305D8422C8FBAB00A48983 /* AuthViewController.swift in Sources */,
+				62B0F14D22D0D1A5006A7D2A /* UIView + animateSpin.swift in Sources */,
 				62305D7022C8E59500A48983 /* AppDelegate.swift in Sources */,
+				62B0F14F22D0D629006A7D2A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
