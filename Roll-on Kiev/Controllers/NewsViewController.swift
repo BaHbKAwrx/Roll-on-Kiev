@@ -10,6 +10,8 @@ import UIKit
 
 class NewsViewController: UIViewController {
     
+    @IBOutlet weak var newsTable: UITableView!
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -20,4 +22,16 @@ class NewsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+}
+
+extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = newsTable.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as? NewsPostCell
+        return cell!
+    }
 }
