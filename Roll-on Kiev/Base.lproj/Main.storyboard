@@ -125,37 +125,85 @@
             </objects>
             <point key="canvasLocation" x="53.600000000000001" y="26.53673163418291"/>
         </scene>
-        <!--Item 2-->
+        <!--Cars-->
         <scene sceneID="Uhw-Ft-4L9">
             <objects>
-                <viewController id="Zxe-zQ-c9T" sceneMemberID="viewController">
+                <viewController id="Zxe-zQ-c9T" customClass="CarsViewController" customModule="Roll_on_Kiev" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CrO-R6-j9n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There will be cars of community members" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dp-GU-mLn">
+                                <rect key="frame" x="74.5" y="275.5" width="226" height="116"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="0iW-jO-tpp"/>
+                                    <constraint firstAttribute="height" constant="116" id="IyY-6s-i4Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6dp-GU-mLn" firstAttribute="centerX" secondItem="CrO-R6-j9n" secondAttribute="centerX" id="Zjc-Hy-vV3"/>
+                            <constraint firstItem="6dp-GU-mLn" firstAttribute="centerY" secondItem="CrO-R6-j9n" secondAttribute="centerY" id="and-co-7AK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qOJ-hA-Oqj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="28M-N4-sFL"/>
+                    <tabBarItem key="tabBarItem" title="Cars" image="carIcon" id="28M-N4-sFL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTs-yK-kcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1866" y="358"/>
+            <point key="canvasLocation" x="933.60000000000002" y="796.55172413793105"/>
         </scene>
-        <!--Item 1-->
+        <!--Info-->
+        <scene sceneID="HVZ-Jd-iBD">
+            <objects>
+                <viewController id="PD6-S1-7bf" customClass="InformationViewController" customModule="Roll_on_Kiev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NeZ-rL-U4Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There will be information about place and time of event" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIe-jP-W1M">
+                                <rect key="frame" x="48" y="291.5" width="279" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="279" id="gaJ-Mw-aZP"/>
+                                    <constraint firstAttribute="height" constant="84" id="is6-O6-XCV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XIe-jP-W1M" firstAttribute="centerX" secondItem="NeZ-rL-U4Y" secondAttribute="centerX" id="XoC-mD-pwu"/>
+                            <constraint firstItem="XIe-jP-W1M" firstAttribute="centerY" secondItem="NeZ-rL-U4Y" secondAttribute="centerY" id="ev3-Hh-T4z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N9v-qa-4SD"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Info" image="infoIcon" id="bFx-ch-h1w"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2WZ-wF-ZzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1864.8" y="797.45127436281871"/>
+        </scene>
+        <!--News-->
         <scene sceneID="1vZ-hu-Hua">
             <objects>
-                <viewController id="8Yx-nG-KfM" sceneMemberID="viewController">
+                <viewController id="8Yx-nG-KfM" customClass="NewsViewController" customModule="Roll_on_Kiev" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ove-Wi-Hwg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CA4-CN-dZj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="z6c-e0-6Qy"/>
+                    <tabBarItem key="tabBarItem" title="News" image="newsIcon" id="z6c-e0-6Qy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C2T-7e-Ujq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1866" y="-306"/>
+            <point key="canvasLocation" x="54" y="797"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="c4f-zV-SL7">
@@ -165,10 +213,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="8Yx-nG-KfM" kind="relationship" relationship="viewControllers" id="lwU-DS-vLU"/>
                         <segue destination="Zxe-zQ-c9T" kind="relationship" relationship="viewControllers" id="n79-wR-OX2"/>
+                        <segue destination="PD6-S1-7bf" kind="relationship" relationship="viewControllers" id="6FG-RA-9Oh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBU-AT-eDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,5 +229,8 @@
     </scenes>
     <resources>
         <image name="RollOn" width="1024" height="1024"/>
+        <image name="carIcon" width="50" height="50"/>
+        <image name="infoIcon" width="50" height="50"/>
+        <image name="newsIcon" width="50" height="50"/>
     </resources>
 </document>
