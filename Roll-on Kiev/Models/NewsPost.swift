@@ -13,14 +13,17 @@ struct NewsPost {
     
     let header: String?
     let text: String?
+    let imageURL: String?
     
     init(snapshot: DataSnapshot) {
         if let snapshotValue = snapshot.value as? [String: AnyObject] {
             header = snapshotValue["header"] as? String
             text = snapshotValue["text"] as? String
+            imageURL = snapshotValue["pictureURL"] as? String
         } else {
             header = ""
             text = ""
+            imageURL = "//default value"
         }
     }
     

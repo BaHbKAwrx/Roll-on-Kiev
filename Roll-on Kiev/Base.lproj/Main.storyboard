@@ -216,8 +216,9 @@
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RollOn" translatesAutoresizingMaskIntoConstraints="NO" id="Efm-Ak-XeG">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Efm-Ak-XeG">
                                                             <rect key="frame" x="8" y="139" width="327" height="153"/>
+                                                            <color key="backgroundColor" white="0.75367208702923505" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="153" id="5Ne-9n-rYG"/>
                                                             </constraints>

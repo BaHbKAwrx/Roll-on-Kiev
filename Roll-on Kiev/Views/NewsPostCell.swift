@@ -24,4 +24,9 @@ class NewsPostCell: UITableViewCell {
         postImage.layer.cornerRadius = 10
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        postImage.image = nil
+    }
+    
 }
