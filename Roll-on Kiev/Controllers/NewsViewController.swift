@@ -8,13 +8,13 @@
 
 import UIKit
 import Firebase
+import Kingfisher
 
 class NewsViewController: UIViewController {
     
     @IBOutlet weak var newsTable: UITableView!
     
     var databaseRef: DatabaseReference!
-    var storageRef: StorageReference!
     var news = [NewsPost]()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -24,7 +24,6 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         databaseRef = Database.database().reference().child("posts")
-        storageRef = Storage.storage().reference().child("newsImages")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,24 +64,12 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.postHeader.text = newsPost.header
             cell.postText.text = newsPost.text
             
-            // downloading photo from StorageURL
+            // downloading image via Kingfisher
             if let imageURL = newsPost.imageURL {
-                let imageStorageRef = Storage.storage().reference(forURL: imageURL)
-                
-                imageStorageRef.getData(maxSize: 2 * 1024 * 1024) { (data, error) in
-                    if let error = error {
-                        print("*** error downloading image \(error)")
-                    } else {
-                        if let imageData = data {
-                            DispatchQueue.main.async {
-                                let image = UIImage(data: imageData)
-                                cell.postImage.image = image
-                            }
-                        }
-                    }
-                }
+                let url = URL(string: imageURL)
+                cell.postImage.kf.indicatorType = .activity
+                cell.postImage.kf.setImage(with: url, options: [.transition(.fade(0.7))])
             }
-            
             
             return cell
         } else {

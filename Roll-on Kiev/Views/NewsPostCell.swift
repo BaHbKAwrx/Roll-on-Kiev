@@ -27,6 +27,7 @@ class NewsPostCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         postImage.image = nil
+        postImage.kf.cancelDownloadTask()
     }
     
 }
