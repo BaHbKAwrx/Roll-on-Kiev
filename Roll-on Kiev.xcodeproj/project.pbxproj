@@ -18,6 +18,7 @@
 		62A3A3C422D39BBA000A3455 /* CarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3A3C322D39BBA000A3455 /* CarsViewController.swift */; };
 		62A3A3C622D39BC9000A3455 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3A3C522D39BC9000A3455 /* InformationViewController.swift */; };
 		62A3A3CA22D3A7C2000A3455 /* NewsPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3A3C922D3A7C2000A3455 /* NewsPostCell.swift */; };
+		62A3A3CD22D3CC7F000A3455 /* NewsPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3A3CC22D3CC7F000A3455 /* NewsPost.swift */; };
 		62B0F14D22D0D1A5006A7D2A /* UIView + animateSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B0F14C22D0D1A5006A7D2A /* UIView + animateSpin.swift */; };
 		62B0F14F22D0D629006A7D2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B0F14E22D0D629006A7D2A /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		62A3A3C322D39BBA000A3455 /* CarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewController.swift; sourceTree = "<group>"; };
 		62A3A3C522D39BC9000A3455 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		62A3A3C922D3A7C2000A3455 /* NewsPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPostCell.swift; sourceTree = "<group>"; };
+		62A3A3CC22D3CC7F000A3455 /* NewsPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPost.swift; sourceTree = "<group>"; };
 		62B0F14C22D0D1A5006A7D2A /* UIView + animateSpin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + animateSpin.swift"; sourceTree = "<group>"; };
 		62B0F14E22D0D629006A7D2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		986180B3B521326EC95A2053 /* Pods-Roll-on Kiev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roll-on Kiev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Roll-on Kiev/Pods-Roll-on Kiev.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				62305D6F22C8E59500A48983 /* AppDelegate.swift */,
+				62A3A3CE22D3CC84000A3455 /* Models */,
 				62A3A3CB22D3AD6C000A3455 /* Views */,
 				62A3A3C722D39D96000A3455 /* Controllers */,
 				62A3A3C822D39DB1000A3455 /* Helpers */,
@@ -122,6 +125,14 @@
 				62A3A3C922D3A7C2000A3455 /* NewsPostCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		62A3A3CE22D3CC84000A3455 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				62A3A3CC22D3CC7F000A3455 /* NewsPost.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9E6C6030F7AAF02335504D19 /* Pods */ = {
@@ -268,6 +279,7 @@
 				62A3A3C222D39BAB000A3455 /* NewsViewController.swift in Sources */,
 				62B0F14F22D0D629006A7D2A /* Constants.swift in Sources */,
 				62A3A3C422D39BBA000A3455 /* CarsViewController.swift in Sources */,
+				62A3A3CD22D3CC7F000A3455 /* NewsPost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
