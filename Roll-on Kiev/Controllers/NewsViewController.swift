@@ -13,6 +13,7 @@ import Kingfisher
 class NewsViewController: UIViewController {
     
     @IBOutlet weak var newsTable: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var databaseRef: DatabaseReference!
     var news = [NewsPost]()
@@ -28,6 +29,7 @@ class NewsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        activityIndicator.startAnimating()
         
         // getting data from reference
         databaseRef.queryLimited(toFirst: 10).observe(.value) { [weak self] (snapshot) in
@@ -39,6 +41,7 @@ class NewsViewController: UIViewController {
                 }
             }
             // ???? Dispatch queeue main
+            self?.activityIndicator.stopAnimating()
             self?.newsTable.reloadData()
         }
     }

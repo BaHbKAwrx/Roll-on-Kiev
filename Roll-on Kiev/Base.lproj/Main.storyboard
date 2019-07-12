@@ -269,18 +269,24 @@
                                     <outlet property="delegate" destination="8Yx-nG-KfM" id="Bbn-5h-lr0"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ipI-LF-FOU">
+                                <rect key="frame" x="169" y="300.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ipI-LF-FOU" firstAttribute="centerX" secondItem="CA4-CN-dZj" secondAttribute="centerX" id="6c8-xa-PJ0"/>
                             <constraint firstItem="M2q-Lm-ACN" firstAttribute="bottom" secondItem="CA4-CN-dZj" secondAttribute="bottom" id="9oT-0g-Cfs"/>
                             <constraint firstItem="M2q-Lm-ACN" firstAttribute="trailing" secondItem="CA4-CN-dZj" secondAttribute="trailing" id="Hm9-oE-3p6"/>
                             <constraint firstItem="M2q-Lm-ACN" firstAttribute="top" secondItem="CA4-CN-dZj" secondAttribute="top" id="JBW-sd-GOn"/>
                             <constraint firstItem="M2q-Lm-ACN" firstAttribute="leading" secondItem="CA4-CN-dZj" secondAttribute="leading" id="ksk-Sw-o6K"/>
+                            <constraint firstItem="ipI-LF-FOU" firstAttribute="centerY" secondItem="CA4-CN-dZj" secondAttribute="centerY" id="qEH-a7-xuQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CA4-CN-dZj"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="News" image="newsIcon" id="z6c-e0-6Qy"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="ipI-LF-FOU" id="Gmg-0p-bG6"/>
                         <outlet property="newsTable" destination="M2q-Lm-ACN" id="eWa-Dt-aAV"/>
                     </connections>
                 </viewController>
