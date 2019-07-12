@@ -19,11 +19,15 @@ struct NewsPost {
         if let snapshotValue = snapshot.value as? [String: AnyObject] {
             header = snapshotValue["header"] as? String
             text = snapshotValue["text"] as? String
-            imageURL = snapshotValue["pictureURL"] as? String
+            if let postImageURL = snapshotValue["pictureURL"] as? String {
+                imageURL = postImageURL
+            } else {
+                imageURL = "https://firebasestorage.googleapis.com/v0/b/roll-on-kiev.appspot.com/o/newsImages%2FRollon_Onovo.jpg?alt=media&token=3035594b-cf50-426b-a782-d1871e6a2bf7"
+            }
         } else {
             header = ""
             text = ""
-            imageURL = "//default value"
+            imageURL = "https://firebasestorage.googleapis.com/v0/b/roll-on-kiev.appspot.com/o/newsImages%2FRollon_Onovo.jpg?alt=media&token=3035594b-cf50-426b-a782-d1871e6a2bf7"
         }
     }
     

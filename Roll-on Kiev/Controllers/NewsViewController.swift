@@ -30,7 +30,7 @@ class NewsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // getting data from reference
-        databaseRef.observe(.value) { [weak self] (snapshot) in
+        databaseRef.queryLimited(toFirst: 10).observe(.value) { [weak self] (snapshot) in
             self?.news = []
             for item in snapshot.children {
                 if let item = item as? DataSnapshot {
