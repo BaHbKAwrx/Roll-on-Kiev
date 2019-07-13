@@ -8,20 +8,21 @@
 
 import UIKit
 
-class NewsPostCell: UITableViewCell {
+final class NewsPostCell: UITableViewCell {
     
-    @IBOutlet weak var cardView: UIView!
-    @IBOutlet weak var postHeader: UILabel!
-    @IBOutlet weak var postText: UILabel!
-    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet private weak var cardView: UIView!
+    @IBOutlet private weak var postHeader: UILabel!
+    @IBOutlet private weak var postText: UILabel!
+    @IBOutlet private weak var postImage: UIImageView!
+    
+    static let cellIdentifier = "NewsCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        cardView.layer.cornerRadius = 10
+        cardView.layer.cornerRadius = Constants.postCellCornerRadius
         cardView.clipsToBounds = true
-        
-        postImage.layer.cornerRadius = 10
+        postImage.layer.cornerRadius = Constants.postCellCornerRadius
     }
     
     override func prepareForReuse() {
@@ -30,4 +31,15 @@ class NewsPostCell: UITableViewCell {
         postImage.kf.cancelDownloadTask()
     }
     
+    func configure(with newsPost: NewsPost) {
+        postHeader.text = newsPost.header
+        postText.text = newsPost.text
+        
+        // downloading image via Kingfisher
+        if let imageURL = newsPost.imageURL {
+            let url = URL(string: imageURL)
+            postImage.kf.indicatorType = .activity
+            postImage.kf.setImage(with: url, options: [.transition(.fade(Constants.loadedImageFadeDuration))])
+        }
+    }
 }

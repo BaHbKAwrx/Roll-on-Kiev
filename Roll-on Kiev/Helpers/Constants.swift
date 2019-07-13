@@ -26,4 +26,9 @@ struct Constants {
     static let buttonCornerRadius: CGFloat = 8
     static let buttonBorderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor
     
+    // newsVC constants
+    static let defaultPostImageURL = "https://firebasestorage.googleapis.com/v0/b/roll-on-kiev.appspot.com/o/newsImages%2FRollon_Onovo.jpg?alt=media&token=3035594b-cf50-426b-a782-d1871e6a2bf7"
+    static let postCellCornerRadius: CGFloat = 10
+    static let loadedImageFadeDuration = 0.7
+    static let postsLimit: UInt = 10
 }

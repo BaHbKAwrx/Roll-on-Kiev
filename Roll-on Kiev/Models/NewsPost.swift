@@ -22,13 +22,12 @@ struct NewsPost {
             if let postImageURL = snapshotValue["pictureURL"] as? String {
                 imageURL = postImageURL
             } else {
-                imageURL = "https://firebasestorage.googleapis.com/v0/b/roll-on-kiev.appspot.com/o/newsImages%2FRollon_Onovo.jpg?alt=media&token=3035594b-cf50-426b-a782-d1871e6a2bf7"
+                imageURL = Constants.defaultPostImageURL
             }
         } else {
             header = ""
             text = ""
-            imageURL = "https://firebasestorage.googleapis.com/v0/b/roll-on-kiev.appspot.com/o/newsImages%2FRollon_Onovo.jpg?alt=media&token=3035594b-cf50-426b-a782-d1871e6a2bf7"
+            imageURL = Constants.defaultPostImageURL
         }
     }
-    
 }

@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Configuring Firebase
         FirebaseApp.configure()
+        // Making database to work offline
         Database.database().isPersistenceEnabled = true
         return true
     }
