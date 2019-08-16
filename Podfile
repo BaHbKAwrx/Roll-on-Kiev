@@ -13,6 +13,9 @@ target 'Roll-on Kiev' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'Firebase/Analytics'
+  pod 'Fabric', '~> 1.10.2'
+  pod 'Crashlytics', '~> 3.13.4'
   pod 'Kingfisher', '~> 5.0'
 
 end
