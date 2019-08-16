@@ -9,6 +9,7 @@ target 'Roll-on Kiev' do
   # Pods for Roll-on Kiev
 
   pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
