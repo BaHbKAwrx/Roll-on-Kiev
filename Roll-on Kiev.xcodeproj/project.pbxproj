@@ -14,6 +14,7 @@
 		62305D7A22C8E59700A48983 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62305D7822C8E59700A48983 /* LaunchScreen.storyboard */; };
 		62305D8222C8EC9500A48983 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62305D8122C8EC9500A48983 /* GoogleService-Info.plist */; };
 		62305D8422C8FBAB00A48983 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62305D8322C8FBAB00A48983 /* AuthViewController.swift */; };
+		62614C3E230A9B860084E04B /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62614C3D230A9B860084E04B /* NotificationManager.swift */; };
 		62A3A3C222D39BAB000A3455 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3A3C122D39BAB000A3455 /* NewsViewController.swift */; };
 		62A3A3C422D39BBA000A3455 /* CarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3A3C322D39BBA000A3455 /* CarsViewController.swift */; };
 		62A3A3C622D39BC9000A3455 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A3A3C522D39BC9000A3455 /* InformationViewController.swift */; };
@@ -34,6 +35,7 @@
 		62305D8122C8EC9500A48983 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		62305D8322C8FBAB00A48983 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		62614C372305BD610084E04B /* Roll-on Kiev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Roll-on Kiev.entitlements"; sourceTree = "<group>"; };
+		62614C3D230A9B860084E04B /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		62A3A3C122D39BAB000A3455 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		62A3A3C322D39BBA000A3455 /* CarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewController.swift; sourceTree = "<group>"; };
 		62A3A3C522D39BC9000A3455 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				62614C372305BD610084E04B /* Roll-on Kiev.entitlements */,
 				62305D6F22C8E59500A48983 /* AppDelegate.swift */,
+				62614C3D230A9B860084E04B /* NotificationManager.swift */,
 				62A3A3CE22D3CC84000A3455 /* Models */,
 				62A3A3CB22D3AD6C000A3455 /* Views */,
 				62A3A3C722D39D96000A3455 /* Controllers */,
@@ -303,6 +306,7 @@
 			files = (
 				62A3A3CA22D3A7C2000A3455 /* NewsPostCell.swift in Sources */,
 				62305D8422C8FBAB00A48983 /* AuthViewController.swift in Sources */,
+				62614C3E230A9B860084E04B /* NotificationManager.swift in Sources */,
 				62B0F14D22D0D1A5006A7D2A /* UIView + animateSpin.swift in Sources */,
 				62A3A3C622D39BC9000A3455 /* InformationViewController.swift in Sources */,
 				62305D7022C8E59500A48983 /* AppDelegate.swift in Sources */,
