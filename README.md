@@ -8,6 +8,7 @@
 ## Features:
 - Ability to login/register via e-mail or stay anonymous
 - Newsfeed with information about past and upcoming meetings, announcements, etc
+- Push notifications via Firebase
 
 ## TODO:
 - Screen with community member`s cars
@@ -15,5 +16,5 @@
 - Cool animations
 
 ## Libraries used:
-- Firebase (Auth, Database, Storage)
+- Firebase (Auth, Database, Storage, Crashlytics, Cloud Messaging)
 - Kingfisher
