@@ -19,5 +19,8 @@ class CarsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func unwindToCarsList(segue: UIStoryboardSegue) {
+    }
 
 }

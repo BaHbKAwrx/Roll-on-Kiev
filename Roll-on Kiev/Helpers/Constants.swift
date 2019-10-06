@@ -31,4 +31,8 @@ struct Constants {
     static let postCellCornerRadius: CGFloat = 10
     static let loadedImageFadeDuration = 0.7
     static let postsLimit: UInt = 10
+    
+    // addCarVC constants
+    static let descriptionTextViewCornerRadius: CGFloat = 8
+    static let carPhotoImageViewCornerRadius: CGFloat = 12
 }
