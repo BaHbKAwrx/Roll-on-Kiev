@@ -26,13 +26,21 @@ class AddCarViewController: UITableViewController {
         descriptionTextView.layer.cornerRadius = Constants.descriptionTextViewCornerRadius
         carPhotoImageView.layer.cornerRadius = Constants.carPhotoImageViewCornerRadius
         carPhotoImageView.layer.masksToBounds = true
+        
         let carPhotoGesture = UITapGestureRecognizer(target: self, action: #selector(openPhotoLibrary))
         carPhotoImageView.addGestureRecognizer(carPhotoGesture)
+        
+        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tableView.addGestureRecognizer(hideKeyboardGesture)
     }
     
     // MARK: - Methods
     @objc private func openPhotoLibrary() {
         choosePhotoFromLibrary()
+    }
+    
+    @objc private func hideKeyboard(_ gestureRecognizer: UIGestureRecognizer) {
+        view.endEditing(true)
     }
     
     // MARK: - Actions
