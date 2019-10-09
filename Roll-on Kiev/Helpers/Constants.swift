@@ -35,4 +35,5 @@ struct Constants {
     // addCarVC constants
     static let descriptionTextViewCornerRadius: CGFloat = 8
     static let carPhotoImageViewCornerRadius: CGFloat = 12
+    static let toCarsListSegueName = "returnToCarsList"
 }

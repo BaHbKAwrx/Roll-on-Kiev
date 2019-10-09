@@ -8,13 +8,15 @@
 
 import UIKit
 
-class AddCarViewController: UITableViewController {
+final class AddCarViewController: UITableViewController {
     
     // MARK: - Properties
-    @IBOutlet weak var carPhotoImageView: UIImageView!
-    @IBOutlet weak var yearTextField: UITextField!
-    @IBOutlet weak var horsePowerTextField: UITextField!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet private weak var carPhotoImageView: UIImageView!
+    @IBOutlet private weak var yearTextField: UITextField!
+    @IBOutlet private weak var horsePowerTextField: UITextField!
+    @IBOutlet private weak var descriptionTextView: UITextView!
+    
+    private var takenCarImage: UIImage?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -43,15 +45,29 @@ class AddCarViewController: UITableViewController {
         view.endEditing(true)
     }
     
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - Actions
     @IBAction func backButtonTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "returnToCarsList", sender: nil)
         // checking for all fields entered
+        guard !yearTextField.text!.isEmpty, !horsePowerTextField.text!.isEmpty, !descriptionTextView.text.isEmpty, let carImage = takenCarImage else {
+            showAlert(title: "Ошибка", message: "Заполните все данные об автомобиле.")
+            return
+        }
         // adding to the Firebase
+        let newCar = Car(image: carImage, year: yearTextField.text!, power: horsePowerTextField.text!, aboutCar: descriptionTextView.text)
+        newCar.saveInFirebase() // maybe add completion here ???
+        
+        performSegue(withIdentifier: Constants.toCarsListSegueName, sender: nil)
     }
 
 }
@@ -69,6 +85,7 @@ extension AddCarViewController: UIImagePickerControllerDelegate, UINavigationCon
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let photo = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         carPhotoImageView.image = photo
+        takenCarImage = photo
         dismiss(animated: true, completion: nil)
     }
     
