@@ -24,6 +24,7 @@
 		62B0F14F22D0D629006A7D2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B0F14E22D0D629006A7D2A /* Constants.swift */; };
 		62D8727A234A6B96003BE38C /* AddCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D87279234A6B96003BE38C /* AddCarViewController.swift */; };
 		62D8727C234C7CF5003BE38C /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D8727B234C7CF5003BE38C /* Car.swift */; };
+		62D8727E234F2A43003BE38C /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D8727D234F2A43003BE38C /* CarCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		62B0F14E22D0D629006A7D2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		62D87279234A6B96003BE38C /* AddCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarViewController.swift; sourceTree = "<group>"; };
 		62D8727B234C7CF5003BE38C /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		62D8727D234F2A43003BE38C /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
 		986180B3B521326EC95A2053 /* Pods-Roll-on Kiev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roll-on Kiev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Roll-on Kiev/Pods-Roll-on Kiev.debug.xcconfig"; sourceTree = "<group>"; };
 		F288142038059C67FA63E1C0 /* Pods-Roll-on Kiev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roll-on Kiev.release.xcconfig"; path = "Pods/Target Support Files/Pods-Roll-on Kiev/Pods-Roll-on Kiev.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				62A3A3C922D3A7C2000A3455 /* NewsPostCell.swift */,
+				62D8727D234F2A43003BE38C /* CarCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62D8727E234F2A43003BE38C /* CarCell.swift in Sources */,
 				62A3A3CA22D3A7C2000A3455 /* NewsPostCell.swift in Sources */,
 				62305D8422C8FBAB00A48983 /* AuthViewController.swift in Sources */,
 				62D8727C234C7CF5003BE38C /* Car.swift in Sources */,
