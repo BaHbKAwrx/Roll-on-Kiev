@@ -39,4 +39,5 @@ struct Constants {
     
     // carsVC constants
     static let carCellCornerRadius: CGFloat = 8
+    static let defaultCarPhotoURL = "https://firebasestorage.googleapis.com/v0/b/roll-on-kiev.appspot.com/o/carsImages%2Fplaceholder.jpg?alt=media&token=6a75430b-e143-4578-8b42-3b2f17679303"
 }

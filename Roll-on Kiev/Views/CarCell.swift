@@ -23,4 +23,22 @@ final class CarCell: UICollectionViewCell {
         cardView.layer.cornerRadius = Constants.carCellCornerRadius
         cardView.clipsToBounds = true
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        carImage.image = nil
+        carImage.kf.cancelDownloadTask()
+    }
+    
+    func configure(with car: Car) {
+        yearLabel.text = car.year
+        powerLabel.text = car.power
+        
+        // downloading image via Kingfisher
+        if let imageURL = car.imageURL {
+            let url = URL(string: imageURL)
+            carImage.kf.indicatorType = .activity
+            carImage.kf.setImage(with: url, options: [.transition(.fade(Constants.loadedImageFadeDuration))])
+        }
+    }
 }

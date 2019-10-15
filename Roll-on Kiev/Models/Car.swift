@@ -24,6 +24,24 @@ final class Car {
         self.aboutCar = aboutCar
     }
     
+    init(snapshot: DataSnapshot) {
+        if let snapshotValue = snapshot.value as? [String: AnyObject] {
+            year = snapshotValue["year"] as? String
+            power = snapshotValue["power"] as? String
+            aboutCar = snapshotValue["aboutCar"] as? String
+            if let carPhotoUrl = snapshotValue["imageURL"] as? String {
+                imageURL = carPhotoUrl
+            } else {
+                imageURL = Constants.defaultCarPhotoURL
+            }
+        } else {
+            year = "?"
+            power = "?"
+            aboutCar = "?"
+            imageURL = Constants.defaultCarPhotoURL
+        }
+    }
+    
     func saveInFirebase() {
         // getting references
         let newCarRef = Database.database().reference().child("cars").childByAutoId()
