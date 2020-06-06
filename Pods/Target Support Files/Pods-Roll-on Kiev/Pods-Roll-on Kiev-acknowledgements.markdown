@@ -1467,6 +1467,14 @@ Copyright 2018 Google
 
 Copyright 2018 Google
 
+## GoogleMaps
+
+Copyright 2019 Google
+
+## GooglePlaces
+
+Copyright 2019 Google
+
 ## GoogleUtilities
 
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         // Making database to work offline
         Database.database().isPersistenceEnabled = true
+        // Providing API key for Google Maps
+        GMSServices.provideAPIKey("AIzaSyAxkjvuaG-ShLQZtnoUYB9_FzUbYqndaxc")
         return true
     }
 
