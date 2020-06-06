@@ -43,7 +43,7 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
                                         <state key="normal" title="Login">
-                                            <color key="titleColor" white="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6pD-Ke-jZX"/>
@@ -431,25 +431,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There will be information about place and time of event" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIe-jP-W1M">
-                                <rect key="frame" x="48" y="281.5" width="279" height="84"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="279" id="gaJ-Mw-aZP"/>
-                                    <constraint firstAttribute="height" constant="84" id="is6-O6-XCV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to find us:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkJ-fV-APK">
+                                <rect key="frame" x="106" y="24" width="163" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="0.90488548801369861" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZ3-Zm-q2b">
+                                <rect key="frame" x="157.5" y="484.5" width="60" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="0.90488548800000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSI-R7-mJL" customClass="GMSMapView">
+                                <rect key="frame" x="32" y="61" width="311" height="379.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address field" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Th7-Pg-Z1e">
+                                <rect key="frame" x="32" y="448.5" width="311" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlB-9V-Na0">
+                                <rect key="frame" x="32" y="524.5" width="311" height="57.5"/>
+                                <string key="text">Every friday
+From 23-00 till last racer
+* Required condition is good weather</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XIe-jP-W1M" firstAttribute="centerX" secondItem="NeZ-rL-U4Y" secondAttribute="centerX" id="XoC-mD-pwu"/>
-                            <constraint firstItem="XIe-jP-W1M" firstAttribute="centerY" secondItem="NeZ-rL-U4Y" secondAttribute="centerY" id="ev3-Hh-T4z"/>
+                            <constraint firstItem="N9v-qa-4SD" firstAttribute="trailing" secondItem="tlB-9V-Na0" secondAttribute="trailing" constant="32" id="2JW-TI-J34"/>
+                            <constraint firstItem="MkJ-fV-APK" firstAttribute="top" secondItem="N9v-qa-4SD" secondAttribute="top" constant="24" id="3gs-cz-iQn"/>
+                            <constraint firstItem="N9v-qa-4SD" firstAttribute="trailing" secondItem="Th7-Pg-Z1e" secondAttribute="trailing" constant="32" id="DMN-vF-fJG"/>
+                            <constraint firstItem="N9v-qa-4SD" firstAttribute="trailing" secondItem="YSI-R7-mJL" secondAttribute="trailing" constant="32" id="OAa-qe-gmK"/>
+                            <constraint firstItem="Th7-Pg-Z1e" firstAttribute="top" secondItem="YSI-R7-mJL" secondAttribute="bottom" constant="8" id="Oe8-e3-JO0"/>
+                            <constraint firstItem="tlB-9V-Na0" firstAttribute="top" secondItem="AZ3-Zm-q2b" secondAttribute="bottom" constant="16" id="PWE-UC-Vqz"/>
+                            <constraint firstItem="YSI-R7-mJL" firstAttribute="leading" secondItem="N9v-qa-4SD" secondAttribute="leading" constant="32" id="SjI-27-GYh"/>
+                            <constraint firstItem="Th7-Pg-Z1e" firstAttribute="leading" secondItem="N9v-qa-4SD" secondAttribute="leading" constant="32" id="TD6-ZH-lxo"/>
+                            <constraint firstItem="N9v-qa-4SD" firstAttribute="bottom" secondItem="tlB-9V-Na0" secondAttribute="bottom" constant="16" id="U8I-7O-SRn"/>
+                            <constraint firstItem="MkJ-fV-APK" firstAttribute="centerX" secondItem="N9v-qa-4SD" secondAttribute="centerX" id="c5K-sX-auY"/>
+                            <constraint firstItem="AZ3-Zm-q2b" firstAttribute="centerX" secondItem="N9v-qa-4SD" secondAttribute="centerX" id="ieY-ay-XiS"/>
+                            <constraint firstItem="tlB-9V-Na0" firstAttribute="leading" secondItem="N9v-qa-4SD" secondAttribute="leading" constant="32" id="kxw-CG-ZPc"/>
+                            <constraint firstItem="YSI-R7-mJL" firstAttribute="top" secondItem="MkJ-fV-APK" secondAttribute="bottom" constant="8" id="o6X-sU-ZNO"/>
+                            <constraint firstItem="AZ3-Zm-q2b" firstAttribute="top" secondItem="Th7-Pg-Z1e" secondAttribute="bottom" constant="16" id="wIn-ZW-08c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N9v-qa-4SD"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" image="infoIcon" id="bFx-ch-h1w"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="Th7-Pg-Z1e" id="Q35-6q-hhd"/>
+                        <outlet property="mapView" destination="YSI-R7-mJL" id="SI9-hf-S9G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2WZ-wF-ZzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

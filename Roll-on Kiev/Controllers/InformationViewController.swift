@@ -9,27 +9,33 @@
 import UIKit
 import GoogleMaps
 
-class InformationViewController: UIViewController {
+final class InformationViewController: UIViewController {
+    
+    // MARK: - Properties
+    @IBOutlet private weak var mapView: GMSMapView!
+    @IBOutlet private weak var addressLabel: UILabel!
+    
+    private let eventAddress = "Бориспільське шосе, 18 км, Київ"
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 
+    // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 16.0)
-        let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
-        self.view.addSubview(mapView)
+        addressLabel.text = eventAddress
+        
+        // Create a GMSCameraPosition that tells the map to display the coordinate
+        let camera = GMSCameraPosition.camera(withLatitude: 50.401723, longitude: 30.694389, zoom: 13.0)
+        mapView.camera = camera
 
         // Creates a marker in the center of the map.
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
+        marker.position = CLLocationCoordinate2D(latitude: 50.401723, longitude: 30.694389)
+        marker.title = "Roll-on"
+        marker.snippet = "Бориспільське шосе, 18 км, Київ"
         marker.map = mapView
     }
 }
